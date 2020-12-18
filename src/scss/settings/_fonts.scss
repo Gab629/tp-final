@@ -1,8 +1,11 @@
 :root {
 
+  // font-family: 'Russo One', sans-serif;
+  // font-family: 'Salsa', cursive;
+
   //font-family
-  --ff-principal: 'Oswald', sans-serif;
-  --ff-secondary: 'Expletus Sans', cursive;
+  --ff-principal: 'Salsa', cursive;
+  --ff-secondary: 'Russo One', sans-serif;
 
   //font-weight
   --fw-small: 300;
@@ -11,11 +14,11 @@
 
   //font-size-headings
   --fz-h1: 3rem;
-  --fz-h2: 2rem;
-  --fz-h3:1.75rem;
+  --fz-h2: 0.875rem;
 
   //font-size
-  --fz-primary: 1.125rem;
+  --fz-primary: 0.625rem;
+  --fz-secondary: 2rem;
 
   //line-height
   --lh-small: 1.4;
@@ -23,6 +26,6 @@
 
 
   //letter-spacing
-  --ls-primary:.1em;
+  --ls-primary:.1rem;
 
 }

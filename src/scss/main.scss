@@ -33,9 +33,12 @@
 // COMPONENTS
 // Composants d'interface utilisateur spécifiques.
 // C’est là que la majorité de notre travail a lieu.
-@import "components/btn";
-@import "components/section-pays";
+@import "components/header";
+@import "components/hamburger";
+@import "components/swiper";
+@import "components/liste-films";
+
 
 // UTILITIES
 // Utilitaires et classes auxiliaires avec possibilité de remplacer tout ce qui précède, par exemple masquer les éléments de la page
-@import "utilities/exam";
+

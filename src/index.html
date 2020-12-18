@@ -5,48 +5,90 @@
 
     <title>Timflix</title>
     <script src="js/script.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/main.css">
 
 
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Salsa&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header>
     <div class="wrapper">
-        <nav>
+        <nav class="nav-primary">
             <ul>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
+                <li><a href="#"><span>Accueil</span></a></li>
+                <li><a href="#"><span>Médias</span></a></li>
+                <li><a href="#"><span>À propos</span></a></li>
+                <li><a href="#"><span>Contact</span></a></li>
             </ul>
         </nav>
+        <nav class="nav-primary-mobile">
+            <ul>
+                <li><a href="#" class="menu-logo"><h1 class="logo">
+
+                    Timflix</h1>
+                    <img src="images/logo.png" height="100" width="100"/></a></li>
+                <li>
+                    <button class="hamburger hamburger-animated">
+                        <img class="icon-close" src="images/Flèche-bas.png" height="17" width="28"/>
+                        <img class="icon-open" src="images/Flèche-haut.png" height="17" width="28"/>
+                    </button>
+                </li>
+            </ul>
+            <nav class="mobile-modal">
+                <ul>
+                    <li><a href="#"><span>Carrousel</span></a></li>
+                    <li><a href="#"><span>Liste films</span></a></li>
+                    <li><a href="#"><span>À propos</span></a></li>
+                </ul>
+            </nav>
+        </nav>
     </div>
+
 </header>
 
-<article>
-    <div class="wrapper">
-        <section id="carrouselFilms">
 
+
+<article id="liste-films">
+    <div class="wrapper displayFilms">
+        <section class="films">
+
+            <img src="images/image-temp.jpg" height="450" width="300"/>
+            <h2>Film 1</h2>
+        </section>
+        <section class="films">
+
+            <img src="images/image-temp.jpg" height="450" width="300"/>
+            <h2>Film 2</h2>
+        </section>
+        <section class="films">
+
+            <img src="images/image-temp.jpg" height="450" width="300"/>
+            <h2>Film 3</h2>
+        </section>
+        <section class="films">
+
+            <img src="images/image-temp.jpg" height="450" width="300"/>
+            <h2>Film 4</h2>
+        </section>
+        <section class="films">
+
+            <img src="images/image-temp.jpg" height="450" width="300"/>
+            <h2>Film 5</h2>
+        </section>
+        <section class="films">
+
+            <img src="images/image-temp.jpg" height="450" width="300"/>
+            <h2>Film 6</h2>
         </section>
     </div>
 </article>
 
-<article>
-    <div class="wrapper">
-        <section class="films"></section>
-        <section class="films"></section>
-        <section class="films"></section>
-        <section class="films"></section>
-        <section class="films"></section>
-        <section class="films"></section>
-    </div>
-</article>
 
 
-
-
-
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 
 </html>

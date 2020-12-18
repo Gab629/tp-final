@@ -5,11 +5,12 @@ a {
 
   &:visited {
     color: var(--color-link-visited);
+    text-decoration: none;
   }
 
   &:hover {
     color: var(--color-link-hover);
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   &:active {
@@ -19,7 +20,7 @@ a {
 
   &:focus {
     color: var(--color-link-focus);
-    text-decoration: underline;
+    text-decoration: none;
   }
 
 

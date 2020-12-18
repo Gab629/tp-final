@@ -4,10 +4,30 @@
   --min-width: 375px;
   --max-width: 1200px;
 
+
+  //marges
+
+  --margin-thin: 10px;
+  --margin-medium: 15px;
+  --margin-large: 20px;
+
+  //padding
+
+  --padding-thin: 20px;
+  --padding-medium: 30px;
+  --padding-large: 40px;
+
+
+
+
+
+
+
+
+
 }
 
-//media queries breakpoints
-
+// Media queries breakpoints
 $vw-small: 375px;
 $vw-medium: 768px;
-$vw-large: 1200px;
+$vw-large: 1440px;

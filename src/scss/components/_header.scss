@@ -1,0 +1,153 @@
+header {
+
+  .nav-primary {
+    display: none;
+    background-color: var(--color-bg-primary);
+border-bottom: 2px var(--color-black) solid;
+
+
+    ul {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style-type: none;
+
+
+    }
+
+    li {
+      margin: 0 20px;
+    }
+
+
+
+    a:not(.menu-logo) {
+      font: 22px var(--ff-normal);
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 30px;
+      display: block;
+
+      position: relative;
+      transition: .3s all;
+
+      &:hover {
+        color: var(--color-black);
+        font-size: var(--fz-secondary);
+
+        &:before {
+          transform: scaleX(.5);
+
+        }
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        background: var(--color-black);
+        width: 100%;
+        height: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        transform: scaleX(0);
+        transition: .5s transform ease-out;
+
+      }
+
+    }
+  }
+
+  .nav-primary-mobile {
+    position: relative;
+    z-index: 2;
+
+    &.open {
+      .mobile-modal {
+        transform: translateY(0);
+      }
+    }
+
+    ul {
+      background: var(--color-bg-primary);
+      margin: 0;
+      padding: 10px;
+      list-style-type: none;
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      position: relative;
+      z-index: 2;
+
+      text-align: center;
+    }
+
+    .menu-logo img {
+      margin-bottom: var(--margin-medium);
+    }
+  }
+
+  .mobile-modal {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    transform: translateY(-100%);
+    transition: .3s transform ease-out;
+
+    ul {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0;
+    }
+
+    li {
+      border-bottom: 2px var(--color-white) solid;
+      background-color: var(--color-bg-primary);
+    }
+
+    li:nth-child(1) {
+      border-top: 2px var(--color-white) solid;
+    }
+
+    a {
+      padding: var(--padding-thin) 0;
+      display: block;
+      font-size: var(--fz-secondary);
+      text-align: center;
+      text-decoration: none;
+      transition: .5s all;
+    }
+    
+    a:hover{
+      color: black;
+      background-color: #fff;
+    }
+    
+  }
+
+
+}
+
+
+@media screen and(min-width: $vw-medium) {
+  header {
+    .nav-primary {
+      display: none;
+    }
+
+    .nav-primary-mobile{
+display: block;
+    }
+
+  }
+
+}
+
+

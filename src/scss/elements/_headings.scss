@@ -2,23 +2,18 @@
 
 
 h1, h2, h3, h4, h5, h6{
-  font-family: var(--ff-secondary);
-  line-height: var(--lh-small);
-  // font-weight: var(--fw-large);
+  font-family: var(--ff-principal);
+
 }
 
 h1{
   font-size: var(--fz-h1);
-  font-weight: var(--fw-medium);
+
 }
 
 h2{
   font-size: var(--fz-h2);
-  font-weight: var(--fw-medium);
+
 }
 
-h3{
-  text-transform: uppercase;
-  font-size: var(--fz-h3);
-  font-weight: var(--fw-medium);
-}
+
