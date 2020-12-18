@@ -1,0 +1,45 @@
+footer {
+
+  #bas-de-page {
+    background-color: var(--color-bg-tertiary);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    a {
+      color: var(--color-black);
+      transition: .3s all;
+
+      &:hover {
+        color: var(--color-white);
+        text-decoration: underline;
+      }
+    }
+
+  }
+
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  li {
+    padding: 10px;
+    margin: 0 var(--margin-thin);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s all;
+
+  }
+
+  li:hover {
+    background-color: var(--color-white);
+    border-radius: 100%;
+  }
+
+
+}
