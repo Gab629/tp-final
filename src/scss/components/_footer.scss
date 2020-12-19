@@ -16,6 +16,10 @@ footer {
       }
     }
 
+    #media-sociaux{
+      padding-left: 0;
+    }
+
   }
 
 
@@ -37,6 +41,17 @@ footer {
     background-color: var(--color-white);
     border-radius: 100%;
   }
+
+  .material-icons{
+    cursor: pointer;
+    font-size: var(--fz-h1);
+    transition: .3s all;
+  }
+
+  .material-icons:hover{
+    transform: scale(.8);
+  }
+
 
 
 }

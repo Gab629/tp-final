@@ -2,13 +2,12 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
     //Un commentaire
-    console.log("Ça fonctionne!!!");
 
     var hamburger = document.querySelector(".hamburger-animated");
     var menuMobile = document.querySelector(".nav-primary-mobile");
 
     hamburger.addEventListener("click", openMenu);
-    console.log("Oy!!!");
+
 
 
 
@@ -51,4 +50,47 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 });
+
+/* ------------------------------- Smooth Scroll -------------------------------------*/
+
+
+
+function retourHaut() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
