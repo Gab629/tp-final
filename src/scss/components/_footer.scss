@@ -1,10 +1,10 @@
-footer {
-
+footer{
   #bas-de-page {
     background-color: var(--color-bg-tertiary);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
 
     a {
       color: var(--color-black);
@@ -31,10 +31,8 @@ footer {
   }
 
   li {
-    padding: 10px;
-    margin: 0 var(--margin-thin);
     transition: .5s all;
-
+padding: 0 2px;
   }
 
   li:hover {
@@ -44,7 +42,7 @@ footer {
 
   .material-icons{
     cursor: pointer;
-    font-size: var(--fz-h1);
+    font-size: 30px;
     transition: .3s all;
   }
 
@@ -52,6 +50,40 @@ footer {
     transform: scale(.8);
   }
 
+  #media-sociaux img{
+    width: 20px;
+    height: 20px;
+  }
 
 
+}
+
+@media screen and (min-width: $vw-medium){
+  footer{
+
+    li {
+      padding: 10px;
+      margin: 0 var(--margin-thin);
+      transition: .5s all;
+
+    }
+
+    .material-icons{
+      cursor: pointer;
+      font-size: var(--fz-h1);
+      transition: .3s all;
+    }
+
+    #media-sociaux img{
+      width: 35px;
+      height: 35px;
+    }
+    
+    
+    
+    
+    
+    
+  }
+  
 }
