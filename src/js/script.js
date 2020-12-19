@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     }
 
+
+
     var mySwiper = new Swiper('.swiper-container', {
         loop: true,
 
@@ -37,6 +39,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         autoplay: {
             delay: 5000,
+        },
+
+        coverflowEffect: {
+            rotate: 30,
+            slideShadows: true,
         },
 
 
