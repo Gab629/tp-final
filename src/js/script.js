@@ -233,14 +233,20 @@ class MovieDB {
         let section3 = document.querySelector('.swiper-wrapper');
 
         //boucle pour afficher tous les acteurs avec un cloneNode
-        for (let i = 0; i < this.totalFilm; i++) {
+        for (let i = 0; i < data.length; i++) {
             let article = document.querySelector('.swiper-wrapper .swiper-slide').cloneNode(true);
 
             section3.appendChild(article);
 
             let src = this.imgPath + "w500" + data[i].profile_path;
             let image = article.querySelector('img');
-            image.setAttribute('src', src);
+
+            if(data[i].profile_path == null){
+                image.setAttribute('src', "images/image-temp.jpg");
+            }else{
+                image.setAttribute('src', src);
+            }
+
 
             article.querySelector('h2').innerHTML = data[i].character;
 
