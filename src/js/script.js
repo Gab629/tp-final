@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (document.location.pathname.search('fiche-film.html') > 0) {
         let params = new URL(document.location).searchParams;
         connexion.requeteInfoFilms(params.get('id'));
+        connexion.requetteActeur(params.get('id'));
     } else {
         connexion.requeteDernierFilms();
         connexion.requeteDernierFilmsCarrousel();
@@ -181,11 +182,10 @@ class MovieDB {
     };
 
     retourRequeteInfoFilm(event) {
-        console.log('ca marche');
         let target = event.currentTarget;
         let data = JSON.parse(target.responseText);
-        console.log(data.title);
-        console.log(target.responseText);
+        //console.log(data);
+        // console.log(target.responseText);
 
         this.afficheInfoFilm(data);
     };
@@ -206,22 +206,64 @@ class MovieDB {
         article.querySelector('.budget').innerHTML = "Budget : " + data.budget;
         article.querySelector('.recette').innerHTML = "Revenus : " + data.revenue + "$";
 
-//requetteActeur()
+
     }
 
     requetteActeur(movieId) {
         //GET CREDIT (movieDB) - requette AJAX
+        let requette = new XMLHttpRequest();
+        requette.addEventListener('loadend', this.retourRequetteActeur.bind(this));
+        requette.open('GET', this.baseUrl + 'movie/' + movieId + '/credits' + '?api_key=' + this.apikey + '&language=' + this.lang);
+        requette.send();
+
 
     }
 
-    retourRequetteActeur() {
+    retourRequetteActeur(event) {
         //Faire attention au JSON.parse... il ny a pas de results
+        let target = event.currentTarget;
+        let data = JSON.parse(target.responseText).cast;
+        console.log(data);
+        //console.log(target.responseText);
 
+        this.afficheActeur(data);
     }
 
-    afficheActeur() {
-        //boucle pour afficher tous les acteurs avec un cloneNode
+    afficheActeur(data) {
+        let section3 = document.querySelector('.swiper-wrapper');
 
+        //boucle pour afficher tous les acteurs avec un cloneNode
+        for (let i = 0; i < this.totalFilm; i++) {
+            let article = document.querySelector('.swiper-wrapper .swiper-slide').cloneNode(true);
+
+            section3.appendChild(article);
+
+            let src = this.imgPath + "w500" + data[i].profile_path;
+            let image = article.querySelector('img');
+            image.setAttribute('src', src);
+
+            article.querySelector('h2').innerHTML = data[i].character;
+
+
+
+
+
+        }
+        //CARROUSEL ---------------------------------------//
+        var mySwiper2 = new Swiper('.swiper-2', {
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            autoplay: {
+                delay: 5000,
+            },
+
+
+        });
     }
 
 
