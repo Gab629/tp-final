@@ -1,5 +1,4 @@
-
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function (event) {
 
     //Un commentaire
 
@@ -7,8 +6,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var menuMobile = document.querySelector(".nav-primary-mobile");
 
     hamburger.addEventListener("click", openMenu);
-
-
 
 
     function openMenu(evt) {
@@ -28,34 +25,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 
-    var mySwiper = new Swiper('.swiper-container', {
-        loop: true,
-
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
-
-        autoplay: {
-            delay: 5000,
-        },
-
-        coverflowEffect: {
-            rotate: 30,
-            slideShadows: true,
-        },
-
-
-    });
-
     /* ------------------------------- Base de donee -------------------------------------*/
 
     let connexion = new MovieDB();
 
-    if(document.location.pathname.search('fiche-film.html') > 0){
+    if (document.location.pathname.search('fiche-film.html') > 0) {
         let params = new URL(document.location).searchParams;
         connexion.requeteInfoFilms(params.get('id'));
-    }else{
+    } else {
         connexion.requeteDernierFilms();
         connexion.requeteDernierFilmsCarrousel();
     }
@@ -64,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 /* ------------------------------- Smooth Scroll -------------------------------------*/
-
 
 
 function retourHaut() {
@@ -167,23 +143,40 @@ class MovieDB {
             image.setAttribute('src', src);
             image.setAttribute('alt', data[i].title);
 
-           article.querySelector('a').setAttribute('href', 'fiche-film.html?id=' + data[i].id);
+            article.querySelector('a').setAttribute('href', 'fiche-film.html?id=' + data[i].id);
 
-           article.querySelector('.description').innerHTML = data[i].overview || "Aucune description disponible";
+            article.querySelector('.description').innerHTML = data[i].overview || "Aucune description disponible";
 
-           article.querySelector('.vote').innerHTML = "Moyenne des votes : " + data[i].vote_average;
-
+            article.querySelector('.vote').innerHTML = "Moyenne des votes : " + data[i].vote_average;
 
 
         }
-    }
+        var mySwiper = new Swiper('.swiper-container', {
+            loop: true,
 
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            autoplay: {
+                delay: 5000,
+            },
+
+            coverflowEffect: {
+                rotate: 30,
+                slideShadows: true,
+            },
+
+
+        });
+    }
 
 
     requeteInfoFilms(movieId) {
         let requette = new XMLHttpRequest();
         requette.addEventListener('loadend', this.retourRequeteInfoFilm.bind(this));
-        requette.open('GET', this.baseUrl + 'movie/' + movieId +'?api_key=' + this.apikey + '&language=' + this.lang);
+        requette.open('GET', this.baseUrl + 'movie/' + movieId + '?api_key=' + this.apikey + '&language=' + this.lang);
         requette.send();
     };
 
@@ -198,24 +191,35 @@ class MovieDB {
     };
 
     afficheInfoFilm(data) {
+        let article = document.querySelector('.acteur');
+        let src = this.imgPath + "w500" + data.poster_path;
+        let image = article.querySelector('img');
+        image.setAttribute('src', src);
+        image.setAttribute('alt', data.title);
 
-        //requetteActeur()
-        document.querySelector('h1').innerHTML = data.title;
+        document.querySelector('h2').innerHTML = data.title;
+        article.querySelector('.description').innerHTML = data.overview || "Aucune description disponible";
+        article.querySelector('.annee').innerHTML = "Date de sortie : " + data.release_date;
+        article.querySelector('.etoiles').innerHTML = "Moyenne des votes : " + data.vote_average;
+        article.querySelector('.langue').innerHTML = "Langue : " +data.original_language;
+        article.querySelector('.duree').innerHTML = "Durée : " + data.runtime + " min";
+        article.querySelector('.budget').innerHTML = "Budget : " + data.budget;
+        article.querySelector('.recette').innerHTML = "Revenus : " + data.revenue + "$";
 
-
+//requetteActeur()
     }
 
-    requetteActeur(movieId){
+    requetteActeur(movieId) {
         //GET CREDIT (movieDB) - requette AJAX
 
     }
 
-    retourRequetteActeur(){
+    retourRequetteActeur() {
         //Faire attention au JSON.parse... il ny a pas de results
 
     }
 
-    afficheActeur(){
+    afficheActeur() {
         //boucle pour afficher tous les acteurs avec un cloneNode
 
     }
