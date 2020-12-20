@@ -1,0 +1,51 @@
+#fiche-film {
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-bg-primary);
+  }
+
+  .infosFilm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    text-align: center;
+
+    h2{
+      font-size: var(--fz-secondary);
+    }
+
+    img{
+      width: 80vw;
+      object-fit: cover;
+    }
+  }
+
+
+}
+
+@media screen and (min-width: $vw-medium){
+
+  #fiche-film {
+
+
+    .infosFilm {
+
+      .description{
+       width: 50vw;
+      }
+
+      img{
+        width: 50vw;
+
+      }
+    }
+
+
+  }
+
+}

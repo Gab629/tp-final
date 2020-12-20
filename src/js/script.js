@@ -191,7 +191,7 @@ class MovieDB {
     };
 
     afficheInfoFilm(data) {
-        let article = document.querySelector('.acteur');
+        let article = document.querySelector('.infosFilm');
         let src = this.imgPath + "w500" + data.poster_path;
         let image = article.querySelector('img');
         image.setAttribute('src', src);
