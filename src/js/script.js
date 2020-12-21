@@ -153,7 +153,6 @@ class MovieDB {
 
         }
         var mySwiper = new Swiper('.swiper-container', {
-            loop: true,
 
             // If we need pagination
             pagination: {
@@ -248,7 +247,7 @@ class MovieDB {
             }
 
 
-            article.querySelector('h2').innerHTML = data[i].character;
+            article.querySelector('h2').innerHTML = data[i].name;
 
 
 
@@ -257,7 +256,7 @@ class MovieDB {
         }
         //CARROUSEL ---------------------------------------//
         var mySwiper2 = new Swiper('.swiper-2', {
-            loop: true,
+
 
             // If we need pagination
             pagination: {
